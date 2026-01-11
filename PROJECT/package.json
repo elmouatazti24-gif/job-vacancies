@@ -1,0 +1,24 @@
+{
+  "name": "job-vacancies-api",
+  "version": "1.0.0",
+  "description": "Job vacancies API with Express",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest --detectOpenHandles",
+    "test:unit": "jest --testPathPattern=__tests__/unit",
+    "test:integration": "jest --testPathPattern=__tests__/integration"
+  },
+  "keywords": ["job", "vacancies", "express"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "nodemon": "^3.0.1"
+  }
+}

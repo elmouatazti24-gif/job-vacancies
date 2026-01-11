@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Vacancies Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>💼 Job Vacancies Portal</h1>
+                <p>Find and manage exciting job opportunities</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Form Section -->
+            <section class="form-section">
+                <div class="form-container">
+                    <h2>Post a New Vacancy</h2>
+                    <form id="vacancyForm">
+                        <div class="form-group">
+                            <label for="title">Job Title</label>
+                            <input type="text" id="title" placeholder="e.g., Senior Developer" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" placeholder="e.g., Tech Corp" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" placeholder="e.g., New York" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="salary">Salary ($)</label>
+                            <input type="number" id="salary" placeholder="e.g., 120000" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Post Vacancy</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Search and Filter Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search by title, company, or location..." class="search-input">
+                    <button onclick="loadVacancies()" class="btn btn-secondary">Search</button>
+                    <button onclick="loadVacancies()" class="btn btn-secondary">Reset</button>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <h3 id="totalVacancies">0</h3>
+                    <p>Total Vacancies</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="avgSalary">$0</h3>
+                    <p>Average Salary</p>
+                </div>
+            </section>
+
+            <!-- Vacancies List Section -->
+            <section class="vacancies-section">
+                <h2>Available Positions</h2>
+                <div id="vacanciesList" class="vacancies-grid">
+                    <div class="loading">Loading vacancies...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for Editing -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Edit Vacancy</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <div class="form-group">
+                    <label for="editTitle">Job Title</label>
+                    <input type="text" id="editTitle" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editCompany">Company</label>
+                        <input type="text" id="editCompany" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editLocation">Location</label>
+                        <input type="text" id="editLocation" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="editSalary">Salary ($)</label>
+                    <input type="number" id="editSalary" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update Vacancy</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Job Vacancies Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
